@@ -15,6 +15,354 @@ using SubSonic.Utilities;
 namespace Models{
     public partial class SPs{
         
+        /// <summary>
+        /// Creates an object wrapper for the firstP Procedure
+        /// </summary>
+        public static StoredProcedure FirstP()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("firstP", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Get_T_Analysis_OutputListWithCode_Guid Procedure
+        /// </summary>
+        public static StoredProcedure GetTAnalysisOutputListWithCodeGuid()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Get_T_Analysis_OutputListWithCode_Guid", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the newFirstP Procedure
+        /// </summary>
+        public static StoredProcedure NewFirstP()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("newFirstP", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the P_File_Trans Procedure
+        /// </summary>
+        public static StoredProcedure PFileTrans(string APSIDS, string cRESULT)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("P_File_Trans", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@APSIDS", APSIDS, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddOutputParameter("@cRESULT", DbType.AnsiString, null, null);
+            
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the P_Gen_CutterAPS Procedure
+        /// </summary>
+        public static StoredProcedure PGenCutterAPS(string PLANMIDS, string Factory, int? CutterNum, string DateX, string Time, int? Cutcount, string cRESULT)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("P_Gen_CutterAPS", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@PLANMIDS", PLANMIDS, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@Factory", Factory, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@CutterNum", CutterNum, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@Date", DateX, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@Time", Time, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@Cutcount", Cutcount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddOutputParameter("@cRESULT", DbType.AnsiString, null, null);
+            
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the P_Gen_CutterAPS_Anti Procedure
+        /// </summary>
+        public static StoredProcedure PGenCutterAPSAnti(string PLANMID, string cRESULT)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("P_Gen_CutterAPS_Anti", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@PLANMID", PLANMID, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddOutputParameter("@cRESULT", DbType.AnsiString, null, null);
+            
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the P_Material_Cut Procedure
+        /// </summary>
+        public static StoredProcedure PMaterialCut(string APSIDS, string OPCODE, string OPNAME, string MATLENGTH, string OPREMARK, string cRESULT)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("P_Material_Cut", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@APSIDS", APSIDS, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@OPCODE", OPCODE, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@OPNAME", OPNAME, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@MATLENGTH", MATLENGTH, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@OPREMARK", OPREMARK, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddOutputParameter("@cRESULT", DbType.AnsiString, null, null);
+            
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the P_Material_Print Procedure
+        /// </summary>
+        public static StoredProcedure PMaterialPrint(string APSIDS, string IpAdress, string OPCODE, string Print, string cRESULT)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("P_Material_Print", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@APSIDS", APSIDS, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@IpAdress", IpAdress, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@OPCODE", OPCODE, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddParameter("@Print", Print, DbType.AnsiString, null, null);
+        	
+            sp.Command.AddOutputParameter("@cRESULT", DbType.AnsiString, null, null);
+            
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_ClickCount Procedure
+        /// </summary>
+        public static StoredProcedure ProcClickCount(int? ClickCount)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_ClickCount", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@ClickCount", ClickCount, DbType.Int32, 0, 10);
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GeneratePlanCode Procedure
+        /// </summary>
+        public static StoredProcedure ProcGeneratePlanCode(int? GzxfCount, int? GzxkCount, int? xfCount, int? xkCount, DateTime? benginTime)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GeneratePlanCode", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@GzxfCount", GzxfCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@GzxkCount", GzxkCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@xfCount", xfCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@xkCount", xkCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@benginTime", benginTime, DbType.DateTime, null, null);
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GeneratePlanCode_BK Procedure
+        /// </summary>
+        public static StoredProcedure ProcGeneratePlanCodeBk(int? GzxfCount, int? GzxkCount, int? xfCount, int? xkCount, DateTime? benginTime)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GeneratePlanCode_BK", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@GzxfCount", GzxfCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@GzxkCount", GzxkCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@xfCount", xfCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@xkCount", xkCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@benginTime", benginTime, DbType.DateTime, null, null);
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GeneratePlanCode_MTM Procedure
+        /// </summary>
+        public static StoredProcedure ProcGeneratePlanCodeMtm()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GeneratePlanCode_MTM", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GeneratePlanCodeCY Procedure
+        /// </summary>
+        public static StoredProcedure ProcGeneratePlanCodeCY()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GeneratePlanCodeCY", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GetClientClickCount Procedure
+        /// </summary>
+        public static StoredProcedure ProcGetClientClickCount(string type)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GetClientClickCount", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@type", type, DbType.String, null, null);
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GetNextTime Procedure
+        /// </summary>
+        public static StoredProcedure ProcGetNextTime()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GetNextTime", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GetNextTimeShirt Procedure
+        /// </summary>
+        public static StoredProcedure ProcGetNextTimeShirt()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GetNextTimeShirt", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GetPlansDataCY Procedure
+        /// </summary>
+        public static StoredProcedure ProcGetPlansDataCY(DateTime? BeginTime)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GetPlansDataCY", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@BeginTime", BeginTime, DbType.DateTime, null, null);
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_GetPlansTZDataCy Procedure
+        /// </summary>
+        public static StoredProcedure ProcGetPlansTZDataCy()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_GetPlansTZDataCy", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_MTMJH Procedure
+        /// </summary>
+        public static StoredProcedure ProcMtmjh(int? GzxfCount, int? GzxkCount, int? xfCount, int? xkCount)
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_MTMJH", DataService.GetInstance("Nowthwin"), "dbo");
+        	
+            sp.Command.AddParameter("@GzxfCount", GzxfCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@GzxkCount", GzxkCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@xfCount", xfCount, DbType.Int32, 0, 10);
+        	
+            sp.Command.AddParameter("@xkCount", xkCount, DbType.Int32, 0, 10);
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the PROC_OrderList_Backup Procedure
+        /// </summary>
+        public static StoredProcedure ProcOrderListBackup()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("PROC_OrderList_Backup", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the PROC_PlanTypeGnw Procedure
+        /// </summary>
+        public static StoredProcedure ProcPlanTypeGnw()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("PROC_PlanTypeGnw", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_TzXfPlan Procedure
+        /// </summary>
+        public static StoredProcedure ProcTzXfPlan()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_TzXfPlan", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the Proc_TzXfPlan_copy Procedure
+        /// </summary>
+        public static StoredProcedure ProcTzXfPlanCopy()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("Proc_TzXfPlan_copy", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the secondP Procedure
+        /// </summary>
+        public static StoredProcedure SecondP()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("secondP", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the test_wgc Procedure
+        /// </summary>
+        public static StoredProcedure TestWgc()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("test_wgc", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the UpdateT_APSCount Procedure
+        /// </summary>
+        public static StoredProcedure UpdateTAPSCount()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("UpdateT_APSCount", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
+        /// <summary>
+        /// Creates an object wrapper for the YwyPdDZ Procedure
+        /// </summary>
+        public static StoredProcedure YwyPdDZ()
+        {
+            SubSonic.StoredProcedure sp = new SubSonic.StoredProcedure("YwyPdDZ", DataService.GetInstance("Nowthwin"), "");
+        	
+            return sp;
+        }
+        
     }
     
 }
