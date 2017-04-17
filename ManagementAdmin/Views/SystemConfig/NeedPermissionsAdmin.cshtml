@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "权限需求申请列表";
+    Layout = "~/Views/Shared/_LayoutBootstrapTable.cshtml";
+}
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="row row-lg">
+                <div class="col-sm-12">
+                    <!-- Example Events -->
+                    <div class="example-wrap">
+                        <div class="example">
+
+                            <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+                                <button type="button" class="btn btn-outline btn-default" id="btn_ok">
+                                    <i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline btn-default" id="btn_remove">
+                                    <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
+                                </button>
+
+                            </div>
+
+
+                            <table id="TableAdmin" data-height="auto" data-mobile-responsive="true">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="UserName" data-sortable="true">姓名</th>
+                                        <th data-field="GroupName" data-sortable="true">分组</th>
+                                        <th data-field="Email" data-sortable="true">邮箱</th>
+                                        <th data-field="Telphone" data-sortable="true">电话</th>
+                                        <th data-field="Account" data-sortable="true">账号</th>
+                                        <th data-field="PageName" data-sortable="true">需求页面</th>
+                                        <th data-field="PageUrl" data-sortable="true">页面URL</th>
+                                        <th data-field="Content" data-sortable="true">事由</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                    <!-- End Example Events -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+
+<script src="~/Script/Systenconfig-NeedPermissionsAdmin-bom.min.js"></script>

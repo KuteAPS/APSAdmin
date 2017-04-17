@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBootstrapTable.cshtml";
+}
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="row row-lg">
+                <div class="col-sm-12">
+                    <!-- Example Events -->
+                    <div class="example-wrap">
+                        <div class="example">
+
+                            <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+                                <button type="button" class="btn btn-outline btn-default" id="btn_Read">
+                                    <i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline btn-default" id="btn_Del">
+                                    <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                </button>
+
+                            </div>
+
+
+                            <table id="TableAdmin" class="table  table-striped" style="border: none" data-height="auto" data-mobile-responsive="true"></table>
+
+                        </div>
+                    </div>
+                    <!-- End Example Events -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+<script src="~/Script/Systenconfig-ManageBox-bom.min.js"></script>

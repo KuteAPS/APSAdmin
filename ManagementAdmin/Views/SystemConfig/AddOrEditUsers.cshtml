@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "用户添加/修改";
+    Layout = "~/Views/Shared/_LayoutNull.cshtml";
+}
+
+<script src="~/Script/Systenconfig-AddOrEditUsers-bom.min.js"></script>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <form class="form-horizontal m-t " id="commentForm">
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>用户基本信息</h5>
+                    </div>
+                    <div class="ibox-content">
+
+
+                        <div class="form-group" id="Id">
+                            <label class="col-sm-2 control-label">ID：</label>
+                            <div class="col-sm-9">
+                                <input type="text" readonly class="form-control" name="id" value="@ViewBag.EditUser.Id">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">账号：</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="account" class="form-control" placeholder="ZhangSan" value="@ViewBag.EditUser.Account"> <span class="help-block m-b-none">请输入用户登录的账户名</span>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">密码：</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="userPwd" class="form-control" placeholder="123456" value="@ViewBag.EditUser.UserPwd"> <span class="help-block m-b-none">请输入用户登录的密码</span>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓名：</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="userName" class="form-control" placeholder="张三" value="@ViewBag.EditUser.UserName"> <span class="help-block m-b-none">请输入用户姓名</span>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">邮箱：</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="email" class="form-control" placeholder="123456qq.com" value="@ViewBag.EditUser.Email"> <span class="help-block m-b-none">请输入邮箱</span>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">电话：</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="telphone" class="form-control" placeholder="18612345678" value="@ViewBag.EditUser.Telphone"> <span class="help-block m-b-none">请输入电话132*******</span>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">分组：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="UserGroup" name="usersGroup"></select><span class="help-block m-b-none">请输用户分组</span>
+                            </div>
+                            <script>
+                                fullUserGroup(@ViewBag.EditUser.UsersGroup);
+                            </script>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">锁定：</label>
+                            <div class="col-sm-9">
+                                <div class="switch">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" class="onoffswitch-checkbox" value="-1" id="SecurityLock" name="securityLock">
+                                        <label class="onoffswitch-label" for="SecurityLock">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                    <span class="help-block m-b-none">选择安全锁状态</span>
+                                </div>
+                            </div>
+
+                            <script>
+                                if (@ViewBag.EditUser.SecurityLock === -1) {
+                                    $("#SecurityLock").prop("checked", true);
+                                } else {
+                                    $("#SecurityLock").prop("checked", false);
+                                }
+                            </script>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-11 control-label">
+                                <button class="btn btn-primary" type="button" id="btn_submit">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+
+                    <div class="ibox-title">
+                        <h5>用户权限信息</h5>
+                    </div>
+
+                    <div class="ibox-content">
+
+                        <div class="col-md-12"  id="WebPages">
+                            
+                            <script>
+                                fullWebPage("@ViewBag.EditUser.HavingPage");
+                            </script>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $("#btn_submit").click(function () {
+        FormSubmit("/SystemConfig/AddOrUpdateUsers", $("#commentForm").serialize());
+    });
+</script>

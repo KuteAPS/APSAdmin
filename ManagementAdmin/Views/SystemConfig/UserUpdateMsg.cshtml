@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "UserUpdateMsg";
+    Layout = "~/Views/Shared/_LayoutNull.cshtml";
+}
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <form class="form-horizontal m-t " id="commentForm">
+
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>用户基本信息</h5>
+                    </div>
+                    <div class="ibox-content">
+                        
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">账号：</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="account" readonly class="form-control" placeholder="ZhangSan" value="@ViewBag.EditUser.Account"> <span class="help-block m-b-none">请输入用户登录的账户名</span>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">密码：</label>
+                            <div class="col-sm-9">
+                                <input type="password" name="userPwd" class="form-control" placeholder="123456" value="@ViewBag.EditUser.UserPwd"> <span class="help-block m-b-none">请输入用户登录的密码</span>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">姓名：</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="userName" class="form-control" placeholder="张三" value="@ViewBag.EditUser.UserName"> <span class="help-block m-b-none">请输入用户姓名</span>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">邮箱：</label>
+                            <div class="col-sm-9">
+                                <input type="email" name="email" class="form-control" placeholder="123456qq.com" value="@ViewBag.EditUser.Email"> <span class="help-block m-b-none">请输入邮箱</span>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">电话：</label>
+                            <div class="col-sm-9">
+                                <input type="tel" name="telphone" class="form-control" placeholder="18612345678" value="@ViewBag.EditUser.Telphone"> <span class="help-block m-b-none">请输入电话132*******</span>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-11 control-label">
+                                <button class="btn btn-primary" type="button" id="btn_submit">提交</button>
+                            </div>
+                        </div>
+                        <script>
+                            $("#btn_submit").click(function () {
+                                FormSubmit("/SystemConfig/EditUsers", $("#commentForm").serialize());
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

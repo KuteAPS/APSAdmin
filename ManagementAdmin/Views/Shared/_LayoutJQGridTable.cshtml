@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <meta charset="gb2312">
+
+
+    @RenderSection("head", required: false)
+
+    @Styles.Render("~/system/Content")
+    @Styles.Render("~/system/JQGridTablec")
+
+    @Scripts.Render("~/system/jquery")
+    @Scripts.Render("~/system/JQGridTablej")
+
+</head>
+<body>
+
+    @RenderBody()
+
+</body>
+</html> 

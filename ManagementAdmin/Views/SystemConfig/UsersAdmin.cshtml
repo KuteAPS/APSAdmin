@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "用户管理";
+    Layout = "~/Views/Shared/_LayoutBootstrapTable.cshtml";
+}
+
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="row row-lg">
+                <div class="col-sm-12">
+                    <!-- Example Events -->
+                    <div class="example-wrap">
+                        <div class="example">
+
+                            <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+                                <button type="button" class="btn btn-outline btn-default" id="btn_Add">
+                                    <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline btn-default" id="btn_Edit">
+                                    <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline btn-default" id="btn_Del">
+                                    <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                </button>
+                            </div>
+
+
+                            <table id="TableAdmin" data-height="auto" data-mobile-responsive="true">
+                                <thead>
+                                <tr>
+                                    <th data-field="state" data-checkbox="true"></th>
+                                    <th data-field="Id"  data-sortable="true">用户ID</th>
+                                    <th data-field="UserName" data-sortable="true">姓名</th>
+                                    <th data-field="Account" data-sortable="true">账号</th>
+                                    <th data-field="Telphone" data-sortable="true">电话</th>
+                                    <th data-field="Email" data-sortable="true">邮箱</th>
+                                    <th data-field="GroupName" data-sortable="true">分组</th>
+                                    <th data-field="SecurityLock"  data-sortable="true">安全锁</th>
+                                </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                    <!-- End Example Events -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+
+<script src="~/Script/Systenconfig-UserAdmin-bom.min.js"></script>
+ 

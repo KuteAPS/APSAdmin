@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "无权限";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="middle-box text-center animated fadeInDown">
+    <img style="width: 40%" src="~/img/Permission.png" />
+    <h2>No Permission</h2>
+    <h3 class="font-bold">没有权限</h3>
+    <div class="error-desc">
+        抱歉，您没有访问此页面的权限~
+        <form class="form-inline m-t" id="cData" role="form">
+            <input value="@ViewBag.PageId" type="hidden" name="pageId" />
+            <div class="form-group">
+                <input type="text" class="form-control" name="content" placeholder="请输入您的请求理由 …">
+            </div>
+            <button type="button" id="btn_submit" class="btn btn-primary">申请权限</button>
+        </form>
+    </div>
+</div>
+<script>
+    $("#btn_submit").click(function () {
+        FormSubmit("/CustomErrors/NeedPermissions", $("#cData").serialize());
+    })
+</script>
+
