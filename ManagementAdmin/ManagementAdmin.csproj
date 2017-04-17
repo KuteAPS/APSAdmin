@@ -157,7 +157,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageBoxController.cs" />
     <Compile Include="Controllers\SystemConfigController.cs" />
-    <Compile Include="Controllers\TaskListController.cs" />
     <Compile Include="Controllers\ToolController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -600,7 +599,6 @@
     <Content Include="Script\Systenconfig-OldManageBox-bom.min.js" />
     <Content Include="Script\Systenconfig-NeedPermissionsAdmin-bom.min.js" />
     <Content Include="Script\Systenconfig-ManageBox-bom.min.js" />
-    <Content Include="Script\Systenconfig-MyTaskList-bom.min.js" />
     <Content Include="Script\Systenconfig-UserAdmin-bom.min.js" />
     <Content Include="Script\Systenconfig-WebGroupAdmin-bom.min.js" />
     <Content Include="Script\Systenconfig-WebPagedAdmin-bom.min.js" />
@@ -1050,9 +1048,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Tool\Spinners.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\TaskList\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
