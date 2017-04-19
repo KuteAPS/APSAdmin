@@ -144,15 +144,17 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\WebGrease.dll</HintPath>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\CustomErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageBoxController.cs" />
@@ -599,6 +601,7 @@
     <Content Include="Script\Systenconfig-OldManageBox-bom.min.js" />
     <Content Include="Script\Systenconfig-NeedPermissionsAdmin-bom.min.js" />
     <Content Include="Script\Systenconfig-ManageBox-bom.min.js" />
+    <Content Include="Script\Systenconfig-AttendanceList-bom.min.js" />
     <Content Include="Script\Systenconfig-UserAdmin-bom.min.js" />
     <Content Include="Script\Systenconfig-WebGroupAdmin-bom.min.js" />
     <Content Include="Script\Systenconfig-WebPagedAdmin-bom.min.js" />
@@ -1048,6 +1051,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Tool\Spinners.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Attendance\ResourceList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Attendance\UpdateResource.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

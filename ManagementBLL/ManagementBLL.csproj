@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttendanceBll.cs" />
     <Compile Include="DataHelperBll.cs" />
     <Compile Include="ManageBoxBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

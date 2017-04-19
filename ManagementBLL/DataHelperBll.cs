@@ -72,12 +72,12 @@ namespace ManagementBLL
         /// <param name="pageSize">页面条数</param>
         /// <param name="tableName">查询表名</param>
         /// <returns></returns>
-        public BootstrapTableOnPageModel GetDataByPage<T>(int currentPage, int pageSize, string tableName, string sort, string order)
+        public BootstrapTableOnPageModel GetDataByPage<T>(int currentPage, int pageSize, string tableName, string sort, string order, string cloum = "", string val = "")
             where T : class, new()
         {
             try
             {
-                return new DataHelper().GetPagedModel<T>(currentPage, pageSize, tableName, sort,order);
+                return new DataHelper().GetPagedModel<T>(currentPage, pageSize, tableName, sort,order, cloum,val);
             }
             catch (Exception)
             {
@@ -85,6 +85,8 @@ namespace ManagementBLL
             }
         }
         
+
+
         /// <summary>
         ///     分页获取数据 JqGrid
         /// </summary>

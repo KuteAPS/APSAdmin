@@ -53,7 +53,7 @@ function ToastShow(title, msg, timeOut, clickMsg, type) {
     toastr.options.showMethod = "fadeIn";
     toastr.options.hideMethod = "fadeOut";
 
-    var $toast = parent.toastr[type](msg, title);
+    var $toast = parent.parent.toastr[type](msg, title);
 
     if ($toast.find("#okBtn").length) {
         $toast.delegate("#okBtn", "click", function () {
@@ -120,7 +120,7 @@ function EditData(tables, url) {
     //iframe窗 
     layer.open({
         type: 2,
-        title: '用户编辑',
+        title: '编辑信息',
         shadeClose: true,
         shade: 0.8,
         area: ['100%', '100%'],

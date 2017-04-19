@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 
 <title>CodeMirror: Tcl mode</title>
 <meta charset="utf-8"/>
@@ -98,7 +98,7 @@ proc whois::319 {from key text} {
 proc whois::317 {from key text} {
   if {[regexp -- {.*\s(\d+)\s(\d+)\s\:} $text wholematch idle signon]} {
     putserv "PRIVMSG $whois::channel :${whois::logo} ${whois::tagf}Connected:${whois::textf} \
-        [ctime $signon] ${whois::tagf}Idle:${whois::textf} [duration $idle]"
+        [ctime $signon] ${whois::tagf}idle:${whois::textf} [duration $idle]"
   }
 }
 proc whois::301 {from key text} {

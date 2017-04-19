@@ -75,6 +75,18 @@ namespace Models
         }
         
         
+        
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public bool Delete(string Resources,string ResourcesCode)
+        {
+            Query qry = new Query(TBasisResource.Schema);
+            qry.QueryType = QueryType.Delete;
+            qry.AddWhere("Resources", Resources).AND("ResourcesCode", ResourcesCode);
+            qry.Execute();
+            return (true);
+        }        
+       
+    	
     	
 	    /// <summary>
 	    /// Inserts a record, can be used with the Object Data Source

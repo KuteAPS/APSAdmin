@@ -256,6 +256,7 @@ namespace ManagementAdmin.Controllers
                 #endregion
 
                 Dictionary<string, object> dictionary = new Dictionary<string, object>();
+                dictionary.Add("id", int.Parse(id));
                 dictionary.Add("pageName", pageName);
                 dictionary.Add("pageUrl", pageUrl);
                 dictionary.Add("groupId", groupId);

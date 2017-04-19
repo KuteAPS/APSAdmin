@@ -40,7 +40,7 @@ namespace ManagementDAL
         /// <param name="pageSize">行数</param>
         /// <param name="tableName">查询表名</param>
         /// <returns> BootstrapTable 分页集合对象</returns>
-        public BootstrapTableOnPageModel GetPagedModel<T>(int currentPage, int pageSize, string tableName, string sort, string order) where T : new()
+        public BootstrapTableOnPageModel GetPagedModel<T>(int currentPage, int pageSize, string tableName, string sort, string order, string cloum = "", string val = "") where T : new()
         {
             try
             {
@@ -53,9 +53,20 @@ namespace ManagementDAL
                     else
                         query.OrderDesc(sort);
                 }
+
+                if (!string.IsNullOrWhiteSpace(cloum) && !string.IsNullOrWhiteSpace(val))
+                {
+                    query.Where(cloum).Like($"%{val}%");
+                }
+
                 query.Paged(currentPage, pageSize);
 
                 SqlQuery query1 = new Select("count(*)").From(tableName);
+
+                if (!string.IsNullOrWhiteSpace(cloum) && !string.IsNullOrWhiteSpace(val))
+                {
+                    query1.Where(cloum).Like($"%{val}%");
+                }
                 return new BootstrapTableOnPageModel() { total = (int)query1.ExecuteScalar(), rows = query.ExecuteTypedList<T>() };
             }
             catch (Exception)
@@ -337,7 +348,7 @@ namespace ManagementDAL
 
                 foreach (var str in value)
                 {
-                    if(str== value.First())
+                    if (str == value.First())
                         continue;
 
                     if (type.ToLower() == "and")

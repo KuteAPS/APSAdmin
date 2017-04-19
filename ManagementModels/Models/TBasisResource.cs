@@ -144,8 +144,8 @@ namespace Models
 				colvarResourcesCode.DataType = DbType.AnsiString;
 				colvarResourcesCode.MaxLength = 50;
 				colvarResourcesCode.AutoIncrement = false;
-				colvarResourcesCode.IsNullable = true;
-				colvarResourcesCode.IsPrimaryKey = false;
+				colvarResourcesCode.IsNullable = false;
+				colvarResourcesCode.IsPrimaryKey = true;
 				colvarResourcesCode.IsForeignKey = false;
 				colvarResourcesCode.IsReadOnly = false;
 				colvarResourcesCode.DefaultSetting = @"";

@@ -705,6 +705,8 @@ namespace Models
         
 		public static readonly string VPlanDetail = @"V_Plan_Detail";
         
+		public static readonly string VResourcesAll = @"V_ResourcesAll";
+        
 		public static readonly string VTempMESCad = @"V_TempMES_CAD";
         
 		public static readonly string VTzjh = @"v_tzjh";
